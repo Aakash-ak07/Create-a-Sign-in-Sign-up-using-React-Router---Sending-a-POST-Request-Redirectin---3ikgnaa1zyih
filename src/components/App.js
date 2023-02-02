@@ -7,11 +7,10 @@ import Dashboard from './Dashboard';
 
 
 const App = () => {
-
-//code for  Route path="/" , Route path="/dashboard" 
-
+  //code for  Route path="/" , Route path="/dashboard" 
+  
   const [loggedIn,setLoggedIn]=useState(false)
- const [navigate,setNavigate]=useState(false)
+  const [navigate,setNavigate]=useState(false)
   const[email,setEmail]=useState('')
   const[password,setPassword]=useState('')
   return (
