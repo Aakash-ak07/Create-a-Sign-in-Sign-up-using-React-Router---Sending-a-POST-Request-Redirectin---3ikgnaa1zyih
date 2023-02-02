@@ -8,7 +8,7 @@ import Dashboard from './Dashboard';
 
 const App = () => {
   //code for  Route path="/" , Route path="/dashboard" 
-  
+
   const [loggedIn,setLoggedIn]=useState(false)
   const [navigate,setNavigate]=useState(false)
   const[email,setEmail]=useState('')
@@ -18,14 +18,15 @@ const App = () => {
 <div id='App'>
   <Router>
     
-    <Switch>
+  <Switch>
       <Route path="/" exact>
-     <Login email={email} password={password} setLoggedIn={setLoggedIn} setNavigate={setNavigate}/>
+        {loggedIn ? <Redirect to="/dashboard"/>: <Login email={email} password={password} setLoggedIn={setLoggedIn} setNavigate={setNavigate}/>}
       </Route>
       
       <Route path="/Register" exact>
         {navigate? <Redirect to="/" /> : <Register  emailChange={setEmail}  passwordChange={setPassword} setNavigate={setNavigate} />}
       </Route>
+
 
       <Route path="/dashboard" exact>
        <Dashboard setLoggedIn={setLoggedIn}/> 
